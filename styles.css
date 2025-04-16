@@ -67,7 +67,7 @@ body {
     transition: color 0.3s ease;
 }
 
-social-links a:hover {
+.social-links a:hover {
     color: #007bff;
 }
 
@@ -95,32 +95,55 @@ social-links a:hover {
     flex: 1;
     min-width: 300px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* Increase height for better visibility */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9; /* Increase opacity for better visibility */
+    z-index: 0;
+}
+
+.exhibition-card .card-bg {
+    background-image: url('https://source.unsplash.com/random/800x600/?exhibition,art');
+}
+
+.infrastructure-card .card-bg {
+    background-image: url('https://source.unsplash.com/random/800x600/?architecture,building');
 }
 
 .card h2 {
-    background-color: #007bff;
+    background-color: rgba(0, 123, 255, 0.8);
     color: white;
     padding: 15px 20px;
     margin: 0;
     text-align: center;
     font-size: 24px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .exhibition-card h2 {
-    background-color: #9c27b0;
+    background-color: rgba(156, 39, 176, 0.8);
 }
 
 .infrastructure-card h2 {
-    background-color: #2e7d32;
+    background-color: rgba(46, 125, 50, 0.8);
 }
 
 .card-content {
     padding: 20px;
+    position: relative;
+    z-index: 1;
+    margin-top: 170px; /* Adjusted to match the increased bg height */
+    background-color: white;
 }
 
 .card-content h3 {
@@ -137,6 +160,85 @@ social-links a:hover {
 .card-content p {
     margin-bottom: 15px;
     color: #666;
+}
+
+/* Card animation */
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Exhibition page styles */
+.exhibition-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.exhibition-header h1 {
+    color: #9c27b0;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.exhibition-header .subtitle {
+    font-size: 18px;
+    color: #666;
+}
+
+.exhibition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.exhibition-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.exhibition-item:hover {
+    transform: translateY(-5px);
+}
+
+.exhibition-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.exhibition-item h3 {
+    color: #9c27b0;
+    padding: 15px 15px 5px;
+    font-size: 20px;
+}
+
+.exhibition-item p {
+    padding: 0 15px 15px;
+    color: #666;
+}
+
+.back-button-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #555;
 }
 
 /* Responsive Styles */
@@ -157,4 +259,45 @@ social-links a:hover {
     .main-content {
         margin-top: 150px;
     }
+    
+    .exhibition-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card-button-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.exhibition-card .card-button {
+    background-color: #9c27b0;
+}
+
+.infrastructure-card .card-button {
+    background-color: #2e7d32;
+}
+
+.card-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.exhibition-card .card-button:hover {
+    background-color: #7b1fa2;
+}
+
+.infrastructure-card .card-button:hover {
+    background-color: #1b5e20;
 }
