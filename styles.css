@@ -113,10 +113,10 @@ body {
     opacity: 0.9; /* Increase opacity for better visibility */
     z-index: 0;
 }
-
 .exhibition-card .card-bg {
-    background-image: url('https://images.unsplash.com/photo-1531259683007-016a7b628fc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');
+    background-image: url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');
 }
+
 
 .infrastructure-card .card-bg {
     background-image: url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');
@@ -342,6 +342,59 @@ body {
 
 /* Override exhibition item styling for infrastructure page */
 .infrastructurepage .exhibition-item h3 {
+    color: #2e7d32;
+}
+
+/* Infrastructure Page Styles to match Exhibition Page */
+.infrastructure-grid {
+    margin-bottom: 40px;
+}
+
+.infrastructure-item h3 {
+    color: #2e7d32 !important; /* Override exhibition purple color */
+}
+
+.case-study-grid {
+    margin-top: 40px;
+    position: relative;
+}
+
+.section-heading {
+    color: #2e7d32;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
+    grid-column: 1 / -1; /* Make the heading span all columns */
+}
+
+.case-study-item h3 {
+    color: #2e7d32 !important;
+}
+
+.infrastructure-features {
+    background-color: #f0f7f0; /* Light green tint */
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.infrastructure-features h2 {
+    color: #2e7d32;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+/* Override footer after for infrastructure page */
+.infrastructurepage .footer h3:after {
+    background-color: #2e7d32;
+}
+
+.infrastructurepage .footer-contact i {
+    color: #2e7d32;
+}
+
+.infrastructurepage .footer-contact a:hover {
     color: #2e7d32;
 }
 
