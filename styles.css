@@ -9,6 +9,8 @@ body {
     background-color: #f5f5f5;
     color: #333;
     line-height: 1.6;
+    padding-top: 90px; /* Add padding equal to navbar height */
+    margin: 0;
 }
 
 /* Navbar Styles */
@@ -88,7 +90,7 @@ body {
 .main-content.full-width {
     max-width: 100%;
     padding: 0;
-    margin-top: 90px; /* Adjust based on navbar height */
+    margin-top: 0; /* Remove top margin */
 }
 
 .image-container {
@@ -476,18 +478,71 @@ body {
     
 }
 
+/* Updated Footer Styles */
 .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 30px;
 }
 
 .footer-info {
     flex: 1;
     min-width: 250px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #cc0000;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.footer-social a {
+    display: inline-flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    width: 40px;
+    height: 40px;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    color: #333;
+    transition: all 0.3s;
+    position: relative; /* Added for precise positioning */
+}
+
+.footer-social a i {
+    position: absolute; /* Position absolutely to center precisely */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Perfect centering */
+    font-size: 18px; /* Control icon size */
+    line-height: 1; /* Remove extra spacing */
+}
+
+.footer-social a:hover {
+    background-color: #cc0000; /* Changed to red to match theme */
+    color: white;
 }
 
 .footer h3 {
@@ -564,6 +619,10 @@ body {
         flex-direction: column;
     }
 
+    .footer-info {
+        margin-right: 0;
+    }
+
     .image-container {
         flex-direction: column;
         height: calc(200vh - 150px);
@@ -571,5 +630,9 @@ body {
     
     .image-section {
         height: 50%;
+    }
+
+    body {
+        padding-top: 150px; /* Adjust for taller mobile navbar */
     }
 }
